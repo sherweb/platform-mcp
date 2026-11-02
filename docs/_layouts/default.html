@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if page.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
     <meta name="description" content="{{ page.description | default: site.description | escape }}">
+    <link rel="icon" href="https://www.sherweb.com/favicon.ico" sizes="48x48" type="image/x-icon">
     <link rel="stylesheet" href="{{ '/assets/css/sherweb-docs.css' | relative_url }}">
   </head>
   <body>
@@ -17,7 +18,7 @@
         </a>
       </div>
       <nav class="primary-nav" aria-label="Primary navigation">
-        <span class="version">v{{ site.mcp_version | escape }}</span>
+        <a class="version" id="mcp-version" href="https://registry.modelcontextprotocol.io/?q=sherweb" target="_blank" rel="noopener noreferrer">v{{ site.mcp_version | escape }}</a>
         <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Overview</a>
         <a href="{{ '/getstarted.html' | relative_url }}"{% if page.url == '/getstarted.html' %} aria-current="page"{% endif %}>Get started</a>
         <a href="{{ '/troubleshoot.html' | relative_url }}"{% if page.url == '/troubleshoot.html' %} aria-current="page"{% endif %}>Troubleshoot</a>
@@ -39,5 +40,20 @@
         {{ content }}
       </main>
     </div>
+    <script>
+      fetch('https://registry.modelcontextprotocol.io/v0.1/servers/com.sherweb%2Fplatform/versions/latest')
+        .then(function (response) {
+          if (!response.ok) throw new Error('HTTP ' + response.status);
+          return response.json();
+        })
+        .then(function (data) {
+          var version = data && data.server && data.server.version;
+          if (version) {
+            var el = document.getElementById('mcp-version');
+            if (el) el.textContent = 'v' + version.replace(/^v/, '');
+          }
+        })
+        .catch(function () {});
+    </script>
   </body>
 </html>
