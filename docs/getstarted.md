@@ -5,7 +5,7 @@ description: Set up an MCP host to connect to the Sherweb Cumulus MCP Server.
 
 # Get Started
 
-Connect your MCP-compatible application to Cumulus at <https://mcp.sherweb.com>.
+Connect your MCP-compatible application to Cumulus at <https://mcp.sherweb.ai>.
 
 [Overview](/) · [Troubleshoot](troubleshoot.html)
 
@@ -29,7 +29,7 @@ See the [Sherweb setup article](https://helpdesk.sherweb.com/en-us/knowledge-bas
 
 ## 2. Configure your MCP host
 
-Use the remote server URL `https://mcp.sherweb.com`. Follow your host's current setup instructions and register the exact redirect URI it provides in **Cumulus > Security > APIs**.
+Use the remote server URL `https://mcp.sherweb.ai`. Follow your host's current setup instructions and register the exact redirect URI it provides in **Cumulus > Security > APIs**.
 
 ### VS Code and Cursor
 
@@ -40,7 +40,7 @@ Add the server to your MCP configuration, for example in `.vscode/mcp.json`:
   "servers": {
     "sherweb-cumulus": {
       "type": "http",
-      "url": "https://mcp.sherweb.com"
+      "url": "https://mcp.sherweb.ai"
     }
   }
 }
@@ -51,7 +51,7 @@ When the host prompts you, complete authentication with your Cumulus API credent
 ### Microsoft Copilot Studio
 
 1. Open your agent and select **Tools > Add a tool > Add a new MCP**.
-2. Enter a server name and description, and set the server URL to `https://mcp.sherweb.com`.
+2. Enter a server name and description, and set the server URL to `https://mcp.sherweb.ai`.
 3. Choose OAuth 2.0 with manual configuration and enter your Client ID and Client Secret.
 4. Use these OAuth settings:
 

@@ -14,7 +14,7 @@ Use these checks for common connection, authentication, and response issues.
 | Issue | What to check |
 | --- | --- |
 | Sign-in or authentication fails | Confirm the selected flow, Client ID, and host configuration. For interactive sign-in, make sure the exact redirect URI from the host is registered in **Cumulus > Security > APIs**. Never share your Client Secret or token. |
-| Tools are not available | Confirm the server URL is `https://mcp.sherweb.com`, complete authentication, and verify your Cumulus account has the required permissions. Refresh or reconnect the host. |
+| Tools are not available | Confirm the server URL is `https://mcp.sherweb.ai`, complete authentication, and verify your Cumulus account has the required permissions. Refresh or reconnect the host. |
 | The answer is incomplete | Add an organization, product, status, or date range. For long lists, request a smaller result or the next page. |
 | The answer appears inaccurate | Compare the result with Cumulus and try a more specific request. Contact Sherweb if the underlying data differs. |
 | An action fails or has an uncertain result | Do not immediately retry. Check the final state in Cumulus first. Contact Sherweb if the action is unexpected or affected the wrong organization or subscription. |
